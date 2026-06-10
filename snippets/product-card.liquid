@@ -36,6 +36,21 @@
       </p>
     </div>
   </a>
+
+  <div class="product-card__buy">
+    {%- if product.available == false -%}
+      <span class="btn btn--ghost product-card__btn" aria-disabled="true">Sold Out</span>
+    {%- elsif product.has_only_default_variant -%}
+      {%- form 'product', product, class: 'product-card__form' -%}
+        <input type="hidden" name="id" value="{{ product.first_available_variant.id }}">
+        <button type="submit" name="add" class="btn btn--secondary product-card__btn">
+          {%- if product.tags contains 'pre-order' -%}Pre-Order{%- else -%}Add to Cart{%- endif -%}
+        </button>
+      {%- endform -%}
+    {%- else -%}
+      <a href="{{ product.url }}" class="btn btn--secondary product-card__btn">Choose Options</a>
+    {%- endif -%}
+  </div>
 </article>
 
 <style>
@@ -48,7 +63,17 @@
     align-items: center;
     justify-content: center;
     height: 100%;
-    color: rgba(0, 229, 192, 0.3);
+    color: rgba(124, 232, 213, 0.3);
+  }
+  .product-card__buy {
+    padding: 0 1.25rem 1.25rem;
+  }
+  .product-card__form {
+    margin: 0;
+  }
+  .product-card__btn {
+    width: 100%;
+    padding-block: 0.8rem;
   }
   [data-animate] {
     opacity: 0;

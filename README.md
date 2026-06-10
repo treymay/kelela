@@ -62,7 +62,9 @@ In Shopify Admin → **Online Store → Themes**, find "New Avatar" and click **
 
 ### Products & Collections
 
-Create these products in **Products → Add product**:
+**Fastest path:** import the included `products.csv` — in Shopify Admin go to **Products → Import**, upload the file, and all 7 products (vinyl variants, CD, digital, tee, hoodie with sizes) are created instantly. The merch section automatically shows all store products, so they appear on the homepage as soon as the import finishes.
+
+Or create them manually in **Products → Add product**:
 
 
 | Product                     | Tags                     | Notes                  |
@@ -103,10 +105,10 @@ Open **Online Store → Themes → Customize**:
 
 Go to **Theme settings** (gear icon in the customizer):
 
-- **Colors** — Adjust teal/blue/gold palette if needed
-- **Typography** — Default: Syne (headings) + Inter (body)
+- **Colors** — Adjust the black/mint/blue palette if needed
+- **Typography** — Default: Cormorant (headings) + DM Sans (body)
 - **Social media** — Add Instagram, Spotify, TikTok, YouTube, Twitter URLs
-- **Conversion** — Edit announcement bar and trust badge text
+- **Conversion** — Edit the trust badge text
 
 ### Tour Page (Optional)
 
@@ -134,14 +136,14 @@ Create a page in **Online Store → Pages**:
 
 ### Typography
 
-- **Headings:** Syne — bold, futuristic display
-- **Body:** Inter — clean, readable sans-serif
+- **Headings:** Cormorant — elegant editorial serif
+- **Body:** DM Sans — clean geometric sans-serif
 
 ### Conversion Principles Built In
 
 - **One primary CTA per section** — hero has a single "Pre-Order Album" button; stream uses secondary styling
 - **Trust badges** — "Ships July 10" near pre-order; shipping info near merch
-- **Announcement bar** — urgency messaging at the top
+- **Quick add-to-cart** — single-variant products are buyable straight from the grid
 - **Mobile-first** — full-width buttons, collapsible nav, responsive grids
 - **Scroll animations** — sections fade in on scroll for engagement without distraction
 - **Guest checkout** — enable in **Settings → Checkout** for lowest friction
@@ -164,7 +166,6 @@ kelela-new-avatar-theme/
 ├── locales/
 │   └── en.default.json       # Translations
 ├── sections/
-│   ├── announcement-bar.liquid
 │   ├── header.liquid
 │   ├── hero-preorder.liquid      # PRE-ORDER ALBUM
 │   ├── stream-point-blank.liquid # STREAM "POINT BLANK"
@@ -223,7 +224,7 @@ After launch, monitor in **Analytics → Reports**:
 - Newsletter signup conversion
 - Mobile vs desktop bounce rate
 
-A/B test hero CTA copy ("Pre-Order Now" vs "Pre-Order Album") and announcement bar messaging.
+A/B test hero CTA copy ("Pre-Order Now" vs "Pre-Order Album") and trust badge messaging.
 
 ---
 

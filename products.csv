@@ -1,0 +1,14 @@
+Handle,Title,Body (HTML),Vendor,Type,Tags,Published,Option1 Name,Option1 Value,Variant SKU,Variant Grams,Variant Inventory Tracker,Variant Inventory Qty,Variant Inventory Policy,Variant Fulfillment Service,Variant Price,Variant Compare At Price,Variant Requires Shipping,Variant Taxable,Status
+new-avatar-standard-vinyl,New Avatar — Standard Vinyl,"<p>The new album <em>New Avatar</em> on classic black 180g vinyl. Includes full lyric insert and digital download card.</p><p><strong>Ships July 10.</strong></p>",Kelela,Vinyl,pre-order,TRUE,Title,Default Title,NA-VINYL-STD,450,shopify,500,continue,manual,32.00,,TRUE,TRUE,active
+new-avatar-colored-vinyl,New Avatar — Colored Vinyl,"<p><em>New Avatar</em> pressed on exclusive translucent teal vinyl. Limited pressing — once they're gone, they're gone.</p><p><strong>Ships July 10.</strong></p>",Kelela,Vinyl,"pre-order, limited",TRUE,Title,Default Title,NA-VINYL-CLR,450,shopify,300,continue,manual,38.00,,TRUE,TRUE,active
+new-avatar-deluxe-edition,New Avatar — Deluxe Edition,"<p>Deluxe boxset: teal vinyl, exclusive art prints, embroidered patch, and a signed insert.</p><p><strong>Ships July 10.</strong></p>",Kelela,Vinyl,"pre-order, exclusive",TRUE,Title,Default Title,NA-DELUXE,900,shopify,150,continue,manual,48.00,,TRUE,TRUE,active
+new-avatar-cd,New Avatar — CD,"<p>The new album on CD with 12-page booklet.</p><p><strong>Ships July 10.</strong></p>",Kelela,CD,pre-order,TRUE,Title,Default Title,NA-CD,120,shopify,500,continue,manual,16.00,,TRUE,TRUE,active
+new-avatar-digital,New Avatar — Digital Album,"<p>The complete album in high-quality digital format, delivered to your inbox on release day.</p>",Kelela,Digital,pre-order,TRUE,Title,Default Title,NA-DIGITAL,0,,,deny,manual,12.00,,FALSE,TRUE,active
+point-blank-tee,Point Blank Tee,"<p>Heavyweight tee with the <em>Point Blank</em> single art screen-printed front and back. Soft-washed black cotton.</p>",Kelela,Apparel,,TRUE,Size,S,PB-TEE-S,200,shopify,100,deny,manual,38.00,,TRUE,TRUE,active
+point-blank-tee,,,,,,,Size,M,PB-TEE-M,200,shopify,100,deny,manual,38.00,,TRUE,TRUE,
+point-blank-tee,,,,,,,Size,L,PB-TEE-L,200,shopify,100,deny,manual,38.00,,TRUE,TRUE,
+point-blank-tee,,,,,,,Size,XL,PB-TEE-XL,200,shopify,100,deny,manual,38.00,,TRUE,TRUE,
+new-avatar-hoodie,New Avatar Hoodie,"<p>Oversized heavyweight hoodie with embroidered <em>New Avatar</em> emblem in iridescent teal thread.</p>",Kelela,Apparel,limited,TRUE,Size,S,NA-HOOD-S,650,shopify,75,deny,manual,75.00,,TRUE,TRUE,active
+new-avatar-hoodie,,,,,,,Size,M,NA-HOOD-M,650,shopify,75,deny,manual,75.00,,TRUE,TRUE,
+new-avatar-hoodie,,,,,,,Size,L,NA-HOOD-L,650,shopify,75,deny,manual,75.00,,TRUE,TRUE,
+new-avatar-hoodie,,,,,,,Size,XL,NA-HOOD-XL,650,shopify,75,deny,manual,75.00,,TRUE,TRUE,

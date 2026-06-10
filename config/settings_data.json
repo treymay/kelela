@@ -1,20 +1,18 @@
 {
   "current": {
-    "color_primary": "#00E5C0",
-    "color_secondary": "#00B4FF",
-    "color_gold": "#D4AF37",
+    "color_primary": "#7CE8D5",
+    "color_secondary": "#8FBFFF",
+    "color_gold": "#E8D5A8",
     "color_background": "#0A0E14",
     "color_surface": "#121820",
     "color_text": "#F0F4F8",
-    "font_heading": "syne_n7",
-    "font_body": "inter_n4",
+    "font_heading": "cormorant_n5",
+    "font_body": "dm_sans_n4",
     "social_instagram": "https://instagram.com/kelela",
     "social_twitter": "https://twitter.com/kelela",
     "social_tiktok": "https://tiktok.com/@kelela",
     "social_youtube": "https://youtube.com/@kelela",
     "social_spotify": "https://open.spotify.com/artist/4RVnRW35II8EA0imdJDDIn",
-    "trust_badge": "Free shipping on U.S. orders over $75",
-    "show_announcement": true,
-    "announcement_text": "NEW AVATAR — Pre-order now · Ships July 10"
+    "trust_badge": "Free shipping on U.S. orders over $75"
   }
 }

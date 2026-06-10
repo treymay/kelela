@@ -10,7 +10,14 @@
       {%- endif -%}
     </div>
 
-    {%- assign collection = collections[section.settings.collection] -%}
+    {%- liquid
+      assign collection = collections[section.settings.collection]
+      if collection == blank or collection.products.size == 0
+        if collections.all.products.size > 0
+          assign collection = collections.all
+        endif
+      endif
+    -%}
 
     {%- if collection != blank and collection.products.size > 0 -%}
       <div class="merch__grid">

@@ -13,20 +13,20 @@
       {
         "type": "color",
         "id": "color_primary",
-        "label": "Primary accent (teal)",
-        "default": "#00E5C0"
+        "label": "Primary accent (mint green)",
+        "default": "#7CE8D5"
       },
       {
         "type": "color",
         "id": "color_secondary",
-        "label": "Secondary accent (neon blue)",
-        "default": "#00B4FF"
+        "label": "Secondary accent (powder blue)",
+        "default": "#8FBFFF"
       },
       {
         "type": "color",
         "id": "color_gold",
-        "label": "Gold accent",
-        "default": "#D4AF37"
+        "label": "Champagne accent",
+        "default": "#E8D5A8"
       },
       {
         "type": "color",
@@ -55,13 +55,13 @@
         "type": "font_picker",
         "id": "font_heading",
         "label": "Heading font",
-        "default": "syne_n7"
+        "default": "cormorant_n5"
       },
       {
         "type": "font_picker",
         "id": "font_body",
         "label": "Body font",
-        "default": "inter_n4"
+        "default": "dm_sans_n4"
       }
     ]
   },
@@ -103,18 +103,6 @@
         "id": "trust_badge",
         "label": "Trust badge text",
         "default": "Free shipping on U.S. orders over $75"
-      },
-      {
-        "type": "checkbox",
-        "id": "show_announcement",
-        "label": "Show announcement bar",
-        "default": true
-      },
-      {
-        "type": "text",
-        "id": "announcement_text",
-        "label": "Announcement text",
-        "default": "NEW AVATAR — Pre-order now · Ships July 10"
       }
     ]
   }

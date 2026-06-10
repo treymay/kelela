@@ -86,23 +86,33 @@ h1, h2, h3, h4, h5, h6,
   font-family: var(--font-heading);
   font-weight: var(--font-heading-weight);
   font-style: var(--font-heading-style);
-  line-height: 1.1;
-  letter-spacing: -0.02em;
+  line-height: 1.08;
+  letter-spacing: 0.01em;
 }
 
 .section-label {
   display: inline-block;
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.2em;
+  font-family: var(--font-body);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.4em;
   text-transform: uppercase;
   color: var(--color-primary);
-  margin-bottom: 1rem;
+  margin-bottom: 1.25rem;
 }
 
 .section-title {
-  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-size: clamp(2.5rem, 5.5vw, 4.25rem);
   margin-bottom: 1.5rem;
+}
+
+.section-title em,
+.title-accent {
+  font-style: italic;
+  background: var(--gradient-cosmic);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .section-subtitle {
@@ -117,14 +127,14 @@ h1, h2, h3, h4, h5, h6,
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  padding: 1rem 2rem;
-  font-family: var(--font-heading);
-  font-size: 0.875rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
+  padding: 1rem 2.25rem;
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
   border: none;
-  border-radius: var(--radius-sm);
+  border-radius: 999px;
   cursor: pointer;
   transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
   white-space: nowrap;
@@ -138,13 +148,13 @@ h1, h2, h3, h4, h5, h6,
 
 .btn--primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 0 60px rgba(0, 229, 192, 0.5);
+  box-shadow: 0 0 60px rgba(124, 232, 213, 0.4);
 }
 
 .btn--secondary {
   background: transparent;
   color: var(--color-primary);
-  border: 2px solid var(--color-primary);
+  border: 1px solid var(--color-primary);
 }
 
 .btn--secondary:hover {
@@ -184,30 +194,29 @@ h1, h2, h3, h4, h5, h6,
   position: absolute;
   inset: 0;
   background-image:
-    radial-gradient(circle at 20% 80%, rgba(0, 180, 255, 0.08) 0%, transparent 50%),
-    radial-gradient(circle at 80% 20%, rgba(0, 229, 192, 0.08) 0%, transparent 50%);
+    radial-gradient(circle at 20% 80%, rgba(143, 191, 255, 0.07) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(124, 232, 213, 0.07) 0%, transparent 50%);
   pointer-events: none;
 }
 
-/* Cosmic grid overlay */
+/* Soft aurora overlay (replaces tech grid) */
 .cosmic-grid {
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(rgba(0, 229, 192, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0, 229, 192, 0.03) 1px, transparent 1px);
-  background-size: 60px 60px;
+    radial-gradient(ellipse 60% 40% at 15% 20%, rgba(124, 232, 213, 0.06) 0%, transparent 70%),
+    radial-gradient(ellipse 50% 45% at 85% 60%, rgba(143, 191, 255, 0.06) 0%, transparent 70%),
+    radial-gradient(ellipse 45% 35% at 50% 95%, rgba(124, 232, 213, 0.04) 0%, transparent 70%);
   pointer-events: none;
-  mask-image: linear-gradient(to bottom, transparent, black 20%, black 80%, transparent);
 }
 
-/* Geometric accent */
+/* Organic ring accents */
 .geo-accent {
   position: absolute;
-  width: 300px;
-  height: 300px;
-  border: 1px solid rgba(0, 229, 192, 0.15);
-  border-radius: 50%;
+  width: 340px;
+  height: 340px;
+  border: 1px solid rgba(124, 232, 213, 0.12);
+  border-radius: 58% 42% 55% 45% / 48% 55% 45% 52%;
   pointer-events: none;
 }
 
@@ -220,9 +229,10 @@ h1, h2, h3, h4, h5, h6,
 .geo-accent--2 {
   bottom: 20%;
   left: -8%;
-  width: 200px;
-  height: 200px;
-  border-color: rgba(0, 180, 255, 0.15);
+  width: 220px;
+  height: 220px;
+  border-color: rgba(143, 191, 255, 0.12);
+  border-radius: 45% 55% 48% 52% / 55% 45% 58% 42%;
   animation: pulse-ring 6s ease-in-out infinite reverse;
 }
 
@@ -248,10 +258,10 @@ h1, h2, h3, h4, h5, h6,
   gap: 0.5rem;
   font-size: 0.8125rem;
   color: var(--color-text-muted);
-  padding: 0.5rem 1rem;
-  background: rgba(0, 229, 192, 0.08);
-  border: 1px solid rgba(0, 229, 192, 0.2);
-  border-radius: var(--radius-sm);
+  padding: 0.5rem 1.25rem;
+  background: rgba(124, 232, 213, 0.07);
+  border: 1px solid rgba(124, 232, 213, 0.18);
+  border-radius: 999px;
 }
 
 .trust-badge svg {
@@ -265,7 +275,7 @@ h1, h2, h3, h4, h5, h6,
   position: relative;
   background: var(--color-surface);
   border: 1px solid rgba(255, 255, 255, 0.06);
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-lg);
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
@@ -273,13 +283,13 @@ h1, h2, h3, h4, h5, h6,
 .product-card:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow-glow);
-  border-color: rgba(0, 229, 192, 0.3);
+  border-color: rgba(124, 232, 213, 0.28);
 }
 
 .product-card__image {
   aspect-ratio: 1;
   overflow: hidden;
-  background: linear-gradient(135deg, rgba(0, 180, 255, 0.1), rgba(0, 229, 192, 0.1));
+  background: linear-gradient(135deg, rgba(143, 191, 255, 0.08), rgba(124, 232, 213, 0.08));
 }
 
 .product-card__image img {
@@ -314,23 +324,23 @@ h1, h2, h3, h4, h5, h6,
   position: absolute;
   top: 1rem;
   left: 1rem;
-  padding: 0.25rem 0.75rem;
-  font-size: 0.6875rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
+  padding: 0.3rem 0.9rem;
+  font-size: 0.625rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   background: var(--color-gold);
   color: var(--color-bg);
-  border-radius: var(--radius-sm);
+  border-radius: 999px;
 }
 
 /* Form elements */
 .input-field {
   width: 100%;
-  padding: 1rem 1.25rem;
+  padding: 1rem 1.5rem;
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: var(--radius-sm);
+  border-radius: 999px;
   color: var(--color-text);
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
@@ -338,7 +348,7 @@ h1, h2, h3, h4, h5, h6,
 .input-field:focus {
   outline: none;
   border-color: var(--color-primary);
-  box-shadow: 0 0 0 3px rgba(0, 229, 192, 0.15);
+  box-shadow: 0 0 0 3px rgba(124, 232, 213, 0.12);
 }
 
 .input-field::placeholder {
