@@ -118,6 +118,14 @@ Create a page in **Online Store → Pages**:
 2. Under **Theme template**, select `page.tour`
 3. Add to navigation if desired
 
+### Releases Page (Required for the nav link)
+
+The header links to `/pages/releases`. Create the page in **Online Store → Pages**:
+
+1. Title: `Releases` (the URL handle must be `releases`)
+2. Under **Theme template**, select `page.releases`
+3. Save — the full discography (formats, prices, catalogue numbers, tracklists) renders from the theme
+
 ---
 
 ## Design System
