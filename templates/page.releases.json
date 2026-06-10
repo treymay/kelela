@@ -1,9 +1,30 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
       "type": "main-releases",
-      "settings": {}
+      "settings": {
+        "cover_new_avatar": "shopify://shop_images/Screenshot_2026-06-10_at_3.41.36_PM.png",
+        "cover_idea_1": "shopify://shop_images/Screenshot_2026-06-10_at_3.41.43_PM.png",
+        "cover_in_the_blue_light": "shopify://shop_images/Screenshot_2026-06-10_at_3.41.50_PM.png",
+        "cover_raven_remixes": "shopify://shop_images/Screenshot_2026-06-10_at_3.41.57_PM.png",
+        "cover_raven": "shopify://shop_images/Screenshot_2026-06-10_at_3.42.06_PM.png",
+        "cover_tma_remixes": "shopify://shop_images/Screenshot_2026-06-10_at_3.42.14_PM.png",
+        "cover_take_me_apart": "shopify://shop_images/Screenshot_2026-06-10_at_3.42.24_PM.png",
+        "cover_hallucinogen": "shopify://shop_images/Screenshot_2026-06-10_at_3.42.31_PM.png",
+        "cover_hallucinogen_remixes": "shopify://shop_images/Screenshot_2026-06-10_at_3.42.40_PM.png"
+      }
     }
   },
-  "order": ["main"]
+  "order": [
+    "main"
+  ]
 }
