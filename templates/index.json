@@ -566,8 +566,8 @@
         "eyebrow": "Official Store",
         "title": "Merch",
         "description": "Exclusive New Avatar vinyl, apparel, and limited-edition drops.",
-        "collection": "",
-        "products_to_show": 4,
+        "collection": "frontpage",
+        "products_to_show": 7,
         "trust_text": "Free shipping on U.S. orders over $75",
         "view_all_url": "",
         "view_all_text": "View All Merch"
