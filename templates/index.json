@@ -28,41 +28,461 @@
         "date-1": {
           "type": "date",
           "settings": {
-            "date": "2026-09-15",
-            "city": "Los Angeles",
-            "venue": "The Wiltern",
-            "region": "North America"
+            "date": "2026-09-08",
+            "city": "Seattle, WA",
+            "venue": "The Showbox",
+            "region": "North America",
+            "ticket_url": "https://link.seated.com/031a34c8-ca1f-49ce-a75b-e61afdbee345",
+            "ticket_text": "Join Waitlist",
+            "sold_out": true,
+            "vip_url": "https://link.seated.com/031a34c8-ca1f-49ce-a75b-e61afdbee345/2",
+            "vip_text": "VIP"
           }
         },
         "date-2": {
           "type": "date",
           "settings": {
-            "date": "2026-09-18",
-            "city": "Brooklyn",
-            "venue": "Brooklyn Steel",
-            "region": "North America"
+            "date": "2026-09-09",
+            "city": "Portland, OR",
+            "venue": "Wonder Ballroom",
+            "region": "North America",
+            "ticket_url": "https://link.seated.com/d553195d-c170-497d-9bfc-d6ede71ffd1a",
+            "ticket_text": "Tickets",
+            "sold_out": false,
+            "vip_url": "https://link.seated.com/d553195d-c170-497d-9bfc-d6ede71ffd1a/2",
+            "vip_text": "VIP"
           }
         },
         "date-3": {
           "type": "date",
           "settings": {
-            "date": "2026-10-05",
-            "city": "London",
-            "venue": "O2 Academy Brixton",
-            "region": "Europe"
+            "date": "2026-09-13",
+            "city": "Denver, CO",
+            "venue": "Gothic Theatre",
+            "region": "North America",
+            "ticket_url": "https://link.seated.com/0c749cc6-efd7-470d-9431-297e77501297",
+            "ticket_text": "Tickets",
+            "sold_out": false,
+            "vip_url": "https://link.seated.com/0c749cc6-efd7-470d-9431-297e77501297/2",
+            "vip_text": "VIP"
           }
         },
         "date-4": {
           "type": "date",
           "settings": {
-            "date": "2026-10-12",
-            "city": "Berlin",
+            "date": "2026-09-15",
+            "city": "Austin, TX",
+            "venue": "Emo's Austin",
+            "region": "North America",
+            "ticket_url": "https://link.seated.com/f408787f-0cb6-40f5-a64b-9e8c1563280c",
+            "ticket_text": "Tickets",
+            "sold_out": false,
+            "vip_url": "https://link.seated.com/f408787f-0cb6-40f5-a64b-9e8c1563280c/2",
+            "vip_text": "VIP"
+          }
+        },
+        "date-5": {
+          "type": "date",
+          "settings": {
+            "date": "2026-09-16",
+            "city": "Dallas, TX",
+            "venue": "House of Blues Dallas",
+            "region": "North America",
+            "ticket_url": "https://link.seated.com/77a30fd5-cb41-49e6-8ac2-00bf2fd2a1a2",
+            "ticket_text": "Tickets",
+            "sold_out": false,
+            "vip_url": "https://link.seated.com/77a30fd5-cb41-49e6-8ac2-00bf2fd2a1a2/2",
+            "vip_text": "VIP"
+          }
+        },
+        "date-6": {
+          "type": "date",
+          "settings": {
+            "date": "2026-09-17",
+            "city": "Houston, TX",
+            "venue": "House of Blues Houston",
+            "region": "North America",
+            "ticket_url": "https://link.seated.com/838c6357-00b2-45e3-b616-1589656a8398",
+            "ticket_text": "Tickets",
+            "sold_out": false,
+            "vip_url": "https://link.seated.com/838c6357-00b2-45e3-b616-1589656a8398/2",
+            "vip_text": "VIP"
+          }
+        },
+        "date-7": {
+          "type": "date",
+          "settings": {
+            "date": "2026-09-21",
+            "city": "Los Angeles, CA",
+            "venue": "The Wiltern",
+            "region": "North America",
+            "ticket_url": "https://link.seated.com/54da6d42-186f-44e8-980b-f47ec1cac785",
+            "ticket_text": "Join Waitlist",
+            "sold_out": true
+          }
+        },
+        "date-8": {
+          "type": "date",
+          "settings": {
+            "date": "2026-09-22",
+            "city": "Los Angeles, CA",
+            "venue": "The Wiltern",
+            "region": "North America",
+            "ticket_url": "https://link.seated.com/fddca691-9e12-4a9b-8875-ffe088ae3938",
+            "ticket_text": "Tickets",
+            "sold_out": false,
+            "vip_url": "https://link.seated.com/fddca691-9e12-4a9b-8875-ffe088ae3938/2",
+            "vip_text": "VIP"
+          }
+        },
+        "date-9": {
+          "type": "date",
+          "settings": {
+            "date": "2026-09-23",
+            "city": "San Diego, CA",
+            "venue": "The Observatory North Park",
+            "region": "North America",
+            "ticket_url": "https://link.seated.com/4847e8f6-5662-42b9-914a-9a3af19ca283",
+            "ticket_text": "Tickets",
+            "sold_out": false,
+            "vip_url": "https://link.seated.com/4847e8f6-5662-42b9-914a-9a3af19ca283/2",
+            "vip_text": "VIP"
+          }
+        },
+        "date-10": {
+          "type": "date",
+          "settings": {
+            "date": "2026-09-24",
+            "city": "Phoenix, AZ",
+            "venue": "The Van Buren",
+            "region": "North America",
+            "ticket_url": "https://link.seated.com/7ceb8308-6ad5-46fd-bf7c-fb93c898b41c",
+            "ticket_text": "Tickets",
+            "sold_out": false,
+            "vip_url": "https://link.seated.com/7ceb8308-6ad5-46fd-bf7c-fb93c898b41c/2",
+            "vip_text": "VIP"
+          }
+        },
+        "date-11": {
+          "type": "date",
+          "settings": {
+            "date": "2026-09-26",
+            "city": "San Francisco, CA",
+            "venue": "Portola Music Festival",
+            "region": "North America",
+            "ticket_url": "https://link.seated.com/68d2dfc8-b709-4500-8f1f-d1ef86ec7829",
+            "ticket_text": "Tickets",
+            "sold_out": false
+          }
+        },
+        "date-12": {
+          "type": "date",
+          "settings": {
+            "date": "2026-10-05",
+            "city": "Minneapolis, MN",
+            "venue": "Varsity Theater",
+            "region": "North America",
+            "ticket_url": "https://link.seated.com/e99a9fb7-6e22-4918-b236-3c06822b0a22",
+            "ticket_text": "Tickets",
+            "sold_out": false,
+            "vip_url": "https://link.seated.com/e99a9fb7-6e22-4918-b236-3c06822b0a22/2",
+            "vip_text": "VIP"
+          }
+        },
+        "date-13": {
+          "type": "date",
+          "settings": {
+            "date": "2026-10-06",
+            "city": "Chicago, IL",
+            "venue": "The Vic Theatre",
+            "region": "North America",
+            "ticket_url": "https://link.seated.com/ce780f34-72ca-49e3-b4ca-9894b1e460eb",
+            "ticket_text": "Join Waitlist",
+            "sold_out": true,
+            "vip_url": "https://link.seated.com/ce780f34-72ca-49e3-b4ca-9894b1e460eb/2",
+            "vip_text": "VIP"
+          }
+        },
+        "date-14": {
+          "type": "date",
+          "settings": {
+            "date": "2026-10-07",
+            "city": "Toronto, ON",
+            "venue": "The Danforth Music Hall",
+            "region": "North America",
+            "ticket_url": "https://link.seated.com/2d810406-4404-4ae5-9037-0a7df1d52456",
+            "ticket_text": "Join Waitlist",
+            "sold_out": true,
+            "vip_url": "https://link.seated.com/2d810406-4404-4ae5-9037-0a7df1d52456/2",
+            "vip_text": "VIP"
+          }
+        },
+        "date-15": {
+          "type": "date",
+          "settings": {
+            "date": "2026-10-09",
+            "city": "New York, NY",
+            "venue": "Brooklyn Paramount",
+            "region": "North America",
+            "ticket_url": "https://link.seated.com/825dd52b-13dc-4c30-a802-9479919d8eda",
+            "ticket_text": "Join Waitlist",
+            "sold_out": true
+          }
+        },
+        "date-16": {
+          "type": "date",
+          "settings": {
+            "date": "2026-10-10",
+            "city": "New York, NY",
+            "venue": "Brooklyn Paramount",
+            "region": "North America",
+            "ticket_url": "https://link.seated.com/54e60592-038d-4f7b-b9db-53315e6cf326",
+            "ticket_text": "Join Waitlist",
+            "sold_out": true,
+            "vip_url": "https://link.seated.com/54e60592-038d-4f7b-b9db-53315e6cf326/2",
+            "vip_text": "VIP"
+          }
+        },
+        "date-17": {
+          "type": "date",
+          "settings": {
+            "date": "2026-10-11",
+            "city": "Philadelphia, PA",
+            "venue": "Theatre of Living Arts",
+            "region": "North America",
+            "ticket_url": "https://link.seated.com/dd0afad2-1a03-4943-b7dd-a3c104494757",
+            "ticket_text": "Join Waitlist",
+            "sold_out": true,
+            "vip_url": "https://link.seated.com/dd0afad2-1a03-4943-b7dd-a3c104494757/2",
+            "vip_text": "VIP"
+          }
+        },
+        "date-18": {
+          "type": "date",
+          "settings": {
+            "date": "2026-10-13",
+            "city": "Silver Spring, MD",
+            "venue": "The Fillmore Silver Spring",
+            "region": "North America",
+            "ticket_url": "https://link.seated.com/0aa48c3d-8693-411e-ad9e-6ccbfc2e873c",
+            "ticket_text": "Tickets",
+            "sold_out": false,
+            "vip_url": "https://link.seated.com/0aa48c3d-8693-411e-ad9e-6ccbfc2e873c/2",
+            "vip_text": "VIP"
+          }
+        },
+        "date-19": {
+          "type": "date",
+          "settings": {
+            "date": "2026-10-14",
+            "city": "Charlotte, NC",
+            "venue": "The Underground",
+            "region": "North America",
+            "ticket_url": "https://link.seated.com/7cc8bef0-e9cc-4e58-ae9c-71f5775e3e97",
+            "ticket_text": "Join Waitlist",
+            "sold_out": true,
+            "vip_url": "https://link.seated.com/7cc8bef0-e9cc-4e58-ae9c-71f5775e3e97/2",
+            "vip_text": "VIP"
+          }
+        },
+        "date-20": {
+          "type": "date",
+          "settings": {
+            "date": "2026-10-15",
+            "city": "Atlanta, GA",
+            "venue": "Buckhead Theatre",
+            "region": "North America",
+            "ticket_url": "https://link.seated.com/4abb1426-7b65-47ff-8655-07fc1a875f44",
+            "ticket_text": "Tickets",
+            "sold_out": false,
+            "vip_url": "https://link.seated.com/4abb1426-7b65-47ff-8655-07fc1a875f44/2",
+            "vip_text": "VIP"
+          }
+        },
+        "date-21": {
+          "type": "date",
+          "settings": {
+            "date": "2026-10-16",
+            "city": "Miami, FL",
+            "venue": "III Points Festival",
+            "region": "North America",
+            "ticket_url": "https://link.seated.com/aaeb4074-b9d4-4295-976f-c5876bff38e5",
+            "ticket_text": "Tickets",
+            "sold_out": false
+          }
+        },
+        "date-22": {
+          "type": "date",
+          "settings": {
+            "date": "2026-10-21",
+            "city": "Lisbon, Portugal",
+            "venue": "LAV",
+            "region": "Europe",
+            "ticket_url": "https://link.seated.com/616c5909-5344-48a4-b54a-c4e64423b356",
+            "ticket_text": "Tickets",
+            "sold_out": false,
+            "vip_url": "https://link.seated.com/616c5909-5344-48a4-b54a-c4e64423b356/2",
+            "vip_text": "VIP"
+          }
+        },
+        "date-23": {
+          "type": "date",
+          "settings": {
+            "date": "2026-10-22",
+            "city": "Madrid, Spain",
+            "venue": "Sala Lab/Wagon",
+            "region": "Europe",
+            "ticket_url": "https://link.seated.com/235f775a-7115-4a0d-b288-96bd9d8f554d",
+            "ticket_text": "Tickets",
+            "sold_out": false,
+            "vip_url": "https://link.seated.com/235f775a-7115-4a0d-b288-96bd9d8f554d/2",
+            "vip_text": "VIP"
+          }
+        },
+        "date-24": {
+          "type": "date",
+          "settings": {
+            "date": "2026-10-23",
+            "city": "Barcelona, Spain",
+            "venue": "La Paloma",
+            "region": "Europe",
+            "ticket_url": "https://link.seated.com/2228a2fc-0441-443a-aade-28bd91b7fb77",
+            "ticket_text": "Tickets",
+            "sold_out": false,
+            "vip_url": "https://link.seated.com/2228a2fc-0441-443a-aade-28bd91b7fb77/2",
+            "vip_text": "VIP"
+          }
+        },
+        "date-25": {
+          "type": "date",
+          "settings": {
+            "date": "2026-10-27",
+            "city": "Paris, France",
+            "venue": "Élysée-Montmartre",
+            "region": "Europe",
+            "ticket_url": "https://link.seated.com/282dbd02-ab1c-484b-ba31-f9ee2782bbc7",
+            "ticket_text": "Tickets",
+            "sold_out": false,
+            "vip_url": "https://link.seated.com/282dbd02-ab1c-484b-ba31-f9ee2782bbc7/2",
+            "vip_text": "VIP"
+          }
+        },
+        "date-26": {
+          "type": "date",
+          "settings": {
+            "date": "2026-10-28",
+            "city": "Cologne, Germany",
+            "venue": "Stollwerk",
+            "region": "Europe",
+            "ticket_url": "https://link.seated.com/0c49c098-4536-48c3-8763-e0c7eb395455",
+            "ticket_text": "Tickets",
+            "sold_out": false,
+            "vip_url": "https://link.seated.com/0c49c098-4536-48c3-8763-e0c7eb395455/2",
+            "vip_text": "VIP"
+          }
+        },
+        "date-27": {
+          "type": "date",
+          "settings": {
+            "date": "2026-10-29",
+            "city": "Berlin, Germany",
             "venue": "Huxley's Neue Welt",
-            "region": "Europe"
+            "region": "Europe",
+            "ticket_url": "https://link.seated.com/99999d28-8078-4777-8d28-56e5e60b68d5",
+            "ticket_text": "Tickets",
+            "sold_out": false,
+            "vip_url": "https://link.seated.com/99999d28-8078-4777-8d28-56e5e60b68d5/2",
+            "vip_text": "VIP"
+          }
+        },
+        "date-28": {
+          "type": "date",
+          "settings": {
+            "date": "2026-10-31",
+            "city": "Turin, Italy",
+            "venue": "C2C Festival",
+            "region": "Europe",
+            "ticket_url": "https://link.seated.com/f09ee64b-f6a1-4e16-b404-d671fc97d2a1",
+            "ticket_text": "Tickets",
+            "sold_out": false
+          }
+        },
+        "date-29": {
+          "type": "date",
+          "settings": {
+            "date": "2026-11-02",
+            "city": "Brussels, Belgium",
+            "venue": "La Madeleine",
+            "region": "Europe",
+            "ticket_url": "https://link.seated.com/e35525ad-f01a-43cd-ae7f-36c435fef86c",
+            "ticket_text": "Tickets",
+            "sold_out": false,
+            "vip_url": "https://link.seated.com/e35525ad-f01a-43cd-ae7f-36c435fef86c/2",
+            "vip_text": "VIP"
+          }
+        },
+        "date-30": {
+          "type": "date",
+          "settings": {
+            "date": "2026-11-03",
+            "city": "Amsterdam, Netherlands",
+            "venue": "Paradiso",
+            "region": "Europe",
+            "ticket_url": "https://link.seated.com/a04dea8f-3bf6-4d24-b89f-a2047e56bc6a",
+            "ticket_text": "Tickets",
+            "sold_out": false,
+            "vip_url": "https://link.seated.com/a04dea8f-3bf6-4d24-b89f-a2047e56bc6a/2",
+            "vip_text": "VIP"
+          }
+        },
+        "date-31": {
+          "type": "date",
+          "settings": {
+            "date": "2026-11-04",
+            "city": "London, United Kingdom",
+            "venue": "O2 Academy Brixton",
+            "region": "Europe",
+            "ticket_url": "https://link.seated.com/2f567088-0875-4ff4-8e8d-280596537469",
+            "ticket_text": "Tickets",
+            "sold_out": false,
+            "vip_url": "https://link.seated.com/2f567088-0875-4ff4-8e8d-280596537469/2",
+            "vip_text": "VIP"
           }
         }
       },
-      "block_order": ["date-1", "date-2", "date-3", "date-4"],
+      "block_order": [
+        "date-1",
+        "date-2",
+        "date-3",
+        "date-4",
+        "date-5",
+        "date-6",
+        "date-7",
+        "date-8",
+        "date-9",
+        "date-10",
+        "date-11",
+        "date-12",
+        "date-13",
+        "date-14",
+        "date-15",
+        "date-16",
+        "date-17",
+        "date-18",
+        "date-19",
+        "date-20",
+        "date-21",
+        "date-22",
+        "date-23",
+        "date-24",
+        "date-25",
+        "date-26",
+        "date-27",
+        "date-28",
+        "date-29",
+        "date-30",
+        "date-31"
+      ],
       "settings": {
         "eyebrow": "On Tour",
         "title": "Tour Dates",
@@ -103,7 +523,12 @@
           }
         }
       },
-      "block_order": ["product-1", "product-2", "product-3", "product-4"],
+      "block_order": [
+        "product-1",
+        "product-2",
+        "product-3",
+        "product-4"
+      ],
       "settings": {
         "eyebrow": "Official Store",
         "title": "Merch",
@@ -123,5 +548,11 @@
       }
     }
   },
-  "order": ["hero", "stream", "tour", "merch", "follow"]
+  "order": [
+    "hero",
+    "stream",
+    "tour",
+    "merch",
+    "follow"
+  ]
 }

@@ -46,15 +46,31 @@
               </time>
             </div>
             <div class="tour__details">
-              <h3 class="tour__city">{{ block.settings.city }}</h3>
+              <h3 class="tour__city">
+                {{ block.settings.city }}
+                {%- if block.settings.sold_out -%}
+                  <span class="tour__sold-out-tag">Sold Out</span>
+                {%- endif -%}
+              </h3>
               <p class="tour__venue">{{ block.settings.venue }}</p>
               {%- if block.settings.region != blank -%}
                 <span class="tour__region">{{ block.settings.region }}</span>
               {%- endif -%}
             </div>
             <div class="tour__action">
+              {%- if block.settings.vip_url != blank -%}
+                <a href="{{ block.settings.vip_url }}" class="btn btn--ghost btn--inline-mobile tour__vip" target="_blank" rel="noopener">
+                  {{ block.settings.vip_text | default: 'VIP' }}
+                </a>
+              {%- endif -%}
               {%- if block.settings.ticket_url != blank -%}
-                <a href="{{ block.settings.ticket_url }}" class="btn btn--primary btn--inline-mobile" target="_blank" rel="noopener">
+                {%- liquid
+                  assign btn_class = 'btn--primary'
+                  if block.settings.ticket_text == 'Join Waitlist'
+                    assign btn_class = 'btn--secondary'
+                  endif
+                -%}
+                <a href="{{ block.settings.ticket_url }}" class="btn {{ btn_class }} btn--inline-mobile" target="_blank" rel="noopener">
                   {{ block.settings.ticket_text | default: 'Tickets' }}
                   {% render 'icon', icon: 'external' %}
                 </a>
@@ -173,7 +189,20 @@
           "type": "text",
           "id": "ticket_text",
           "label": "Ticket button text",
-          "default": "Tickets"
+          "default": "Tickets",
+          "info": "e.g. Tickets, Join Waitlist"
+        },
+        {
+          "type": "url",
+          "id": "vip_url",
+          "label": "VIP URL",
+          "info": "Optional secondary VIP package link"
+        },
+        {
+          "type": "text",
+          "id": "vip_text",
+          "label": "VIP button text",
+          "default": "VIP"
         },
         {
           "type": "checkbox",
@@ -322,6 +351,11 @@
     text-transform: uppercase;
     color: var(--color-secondary);
   }
+  .tour__action {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
   .tour__sold-out,
   .tour__tba {
     font-size: 0.8125rem;
@@ -332,6 +366,20 @@
   }
   .tour__sold-out {
     color: #ff6b6b;
+  }
+  .tour__sold-out-tag {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 0.75rem;
+    padding: 0.125rem 0.5rem;
+    font-family: var(--font-body);
+    font-size: 0.625rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #ff6b6b;
+    border: 1px solid rgba(255, 107, 107, 0.4);
+    border-radius: var(--radius-sm);
   }
   .tour__empty {
     text-align: center;
@@ -355,7 +403,8 @@
       grid-column: 1 / -1;
     }
     .tour__action .btn {
-      width: 100%;
+      flex: 1;
+      width: auto;
     }
   }
 </style>
