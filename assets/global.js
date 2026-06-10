@@ -43,9 +43,12 @@ class NewAvatarTheme {
   }
 
   initSmoothScroll() {
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    document.querySelectorAll('a[href*="#"]').forEach(anchor => {
       anchor.addEventListener('click', (e) => {
-        const target = document.querySelector(anchor.getAttribute('href'));
+        const url = new URL(anchor.href, window.location.origin);
+        // Only intercept same-page anchors; let cross-page links navigate normally
+        if (url.pathname !== window.location.pathname || !url.hash) return;
+        const target = document.querySelector(url.hash);
         if (target) {
           e.preventDefault();
           const offset = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--header-height')) || 72;
@@ -54,6 +57,18 @@ class NewAvatarTheme {
         }
       });
     });
+
+    // Smooth-scroll to anchor with header offset after cross-page navigation
+    if (window.location.hash) {
+      const target = document.querySelector(window.location.hash);
+      if (target) {
+        setTimeout(() => {
+          const offset = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--header-height')) || 72;
+          const top = target.getBoundingClientRect().top + window.scrollY - offset;
+          window.scrollTo({ top, behavior: 'smooth' });
+        }, 100);
+      }
+    }
   }
 
   initAnimations() {

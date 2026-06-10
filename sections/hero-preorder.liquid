@@ -43,7 +43,7 @@
             {{ section.settings.cta_text | default: 'Pre-Order Album' }}
           </a>
         {%- else -%}
-          <a href="#merch" class="btn btn--primary btn--large">
+          <a href="{{ routes.root_url }}#merch" class="btn btn--primary btn--large">
             {{ section.settings.cta_text | default: 'Pre-Order Album' }}
           </a>
         {%- endif -%}
