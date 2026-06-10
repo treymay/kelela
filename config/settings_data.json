@@ -22,6 +22,21 @@
     "social_tiktok": "https://tiktok.com/@kelela",
     "social_youtube": "https://youtube.com/@kelela",
     "social_spotify": "https://open.spotify.com/artist/4RVnRW35II8EA0imdJDDIn",
-    "trust_badge": "Free shipping on U.S. orders over $75"
+    "trust_badge": "Free shipping on U.S. orders over $75",
+    "sections": {
+      "header": {
+        "type": "header",
+        "settings": {
+          "logo": "shopify://shop_images/logo-white.png"
+        }
+      },
+      "footer": {
+        "type": "footer",
+        "settings": {
+          "tagline": "New Avatar — Out July 10"
+        }
+      }
+    },
+    "content_for_index": []
   }
 }
