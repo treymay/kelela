@@ -3,7 +3,13 @@
   <div class="container">
     <div class="site-footer__grid">
       <div class="site-footer__brand">
-        <a href="{{ routes.root_url }}" class="site-footer__logo">KELELA</a>
+        <a href="{{ routes.root_url }}" class="site-footer__logo" aria-label="{{ shop.name }} — Home">
+          {%- if section.settings.logo != blank -%}
+            {{ section.settings.logo | image_url: width: 400 | image_tag: loading: 'lazy', alt: shop.name }}
+          {%- else -%}
+            <img src="{{ 'kelela-logo.png' | asset_url }}" alt="{{ shop.name }}" width="800" height="396" loading="lazy">
+          {%- endif -%}
+        </a>
         <p class="site-footer__tagline">{{ section.settings.tagline | default: 'New Avatar — Out July 10' }}</p>
       </div>
 
@@ -61,6 +67,12 @@
   "name": "Footer",
   "settings": [
     {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logo image",
+      "info": "Defaults to the bundled Kelela wordmark if empty"
+    },
+    {
       "type": "text",
       "id": "tagline",
       "label": "Tagline",
@@ -83,11 +95,11 @@
     padding-block: 3rem;
   }
   .site-footer__logo {
-    font-family: var(--font-heading);
-    font-size: 1.125rem;
-    font-weight: 700;
-    letter-spacing: 0.3em;
-    color: var(--color-primary);
+    display: inline-block;
+  }
+  .site-footer__logo img {
+    height: 44px;
+    width: auto;
   }
   .site-footer__tagline {
     margin-top: 0.75rem;
