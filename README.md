@@ -106,7 +106,7 @@ Open **Online Store → Themes → Customize**:
 Go to **Theme settings** (gear icon in the customizer):
 
 - **Colors** — Adjust the black/mint/blue palette if needed
-- **Typography** — Default: Cormorant (headings) + DM Sans (body)
+- **Typography** — Default: Playfair Display (headings) + Questrial (body)
 - **Social media** — Add Instagram, Spotify, TikTok, YouTube, Twitter URLs
 - **Conversion** — Edit the trust badge text
 
@@ -136,8 +136,8 @@ Create a page in **Online Store → Pages**:
 
 ### Typography
 
-- **Headings:** Cormorant — elegant editorial serif
-- **Body:** DM Sans — clean geometric sans-serif
+- **Headings:** Playfair Display — high-contrast editorial serif
+- **Body:** Questrial — minimal geometric sans-serif
 
 ### Conversion Principles Built In
 

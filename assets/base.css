@@ -134,7 +134,7 @@ h1, h2, h3, h4, h5, h6,
   letter-spacing: 0.2em;
   text-transform: uppercase;
   border: none;
-  border-radius: 999px;
+  border-radius: 0;
   cursor: pointer;
   transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
   white-space: nowrap;
@@ -210,30 +210,34 @@ h1, h2, h3, h4, h5, h6,
   pointer-events: none;
 }
 
-/* Organic ring accents */
+/* Sharp diamond accents */
 .geo-accent {
   position: absolute;
-  width: 340px;
-  height: 340px;
+  width: 300px;
+  height: 300px;
   border: 1px solid rgba(124, 232, 213, 0.12);
-  border-radius: 58% 42% 55% 45% / 48% 55% 45% 52%;
+  transform: rotate(45deg);
   pointer-events: none;
 }
 
 .geo-accent--1 {
   top: 10%;
   right: -5%;
-  animation: pulse-ring 8s ease-in-out infinite;
+  animation: pulse-diamond 8s ease-in-out infinite;
 }
 
 .geo-accent--2 {
   bottom: 20%;
   left: -8%;
-  width: 220px;
-  height: 220px;
+  width: 200px;
+  height: 200px;
   border-color: rgba(143, 191, 255, 0.12);
-  border-radius: 45% 55% 48% 52% / 55% 45% 58% 42%;
-  animation: pulse-ring 6s ease-in-out infinite reverse;
+  animation: pulse-diamond 6s ease-in-out infinite reverse;
+}
+
+@keyframes pulse-diamond {
+  0%, 100% { transform: rotate(45deg) scale(1); opacity: 0.5; }
+  50% { transform: rotate(45deg) scale(1.08); opacity: 1; }
 }
 
 @keyframes pulse-ring {
@@ -261,7 +265,7 @@ h1, h2, h3, h4, h5, h6,
   padding: 0.5rem 1.25rem;
   background: rgba(124, 232, 213, 0.07);
   border: 1px solid rgba(124, 232, 213, 0.18);
-  border-radius: 999px;
+  border-radius: 0;
 }
 
 .trust-badge svg {
@@ -331,7 +335,7 @@ h1, h2, h3, h4, h5, h6,
   text-transform: uppercase;
   background: var(--color-gold);
   color: var(--color-bg);
-  border-radius: 999px;
+  border-radius: 0;
 }
 
 /* Form elements */
@@ -340,7 +344,7 @@ h1, h2, h3, h4, h5, h6,
   padding: 1rem 1.5rem;
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 999px;
+  border-radius: 0;
   color: var(--color-text);
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
