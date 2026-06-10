@@ -11,6 +11,7 @@
     {%- comment -%} ============ NEW AVATAR ============ {%- endcomment -%}
     <article class="release" data-animate>
       <div class="release__meta">
+        {% render 'release-cover', image: section.settings.cover_new_avatar, title: 'new avatar' %}
         <h2 class="release__title">new avatar</h2>
         <dl class="release__details">
           <div><dt>Label</dt><dd>Warp Records</dd></div>
@@ -83,6 +84,7 @@
     {%- comment -%} ============ IDEA 1 ============ {%- endcomment -%}
     <article class="release" data-animate>
       <div class="release__meta">
+        {% render 'release-cover', image: section.settings.cover_idea_1, title: 'idea 1' %}
         <h2 class="release__title">idea 1</h2>
         <dl class="release__details">
           <div><dt>Label</dt><dd>Warp Records</dd></div>
@@ -113,6 +115,7 @@
     {%- comment -%} ============ IN THE BLUE LIGHT ============ {%- endcomment -%}
     <article class="release" data-animate>
       <div class="release__meta">
+        {% render 'release-cover', image: section.settings.cover_in_the_blue_light, title: 'In The Blue Light' %}
         <h2 class="release__title">In The Blue Light</h2>
         <dl class="release__details">
           <div><dt>Label</dt><dd>Warp Records</dd></div>
@@ -169,6 +172,7 @@
     {%- comment -%} ============ RAVE:N, THE REMIXES ============ {%- endcomment -%}
     <article class="release" data-animate>
       <div class="release__meta">
+        {% render 'release-cover', image: section.settings.cover_raven_remixes, title: 'RAVE:N, The Remixes' %}
         <h2 class="release__title">RAVE:N, The Remixes</h2>
         <dl class="release__details">
           <div><dt>Label</dt><dd>Warp Records</dd></div>
@@ -226,6 +230,7 @@
     {%- comment -%} ============ RAVEN ============ {%- endcomment -%}
     <article class="release" data-animate>
       <div class="release__meta">
+        {% render 'release-cover', image: section.settings.cover_raven, title: 'Raven' %}
         <h2 class="release__title">Raven</h2>
         <dl class="release__details">
           <div><dt>Label</dt><dd>Warp Records</dd></div>
@@ -295,6 +300,7 @@
     {%- comment -%} ============ TAKE ME A_PART, THE REMIXES ============ {%- endcomment -%}
     <article class="release" data-animate>
       <div class="release__meta">
+        {% render 'release-cover', image: section.settings.cover_tma_remixes, title: 'TAKE ME A_PART, THE REMIXES' %}
         <h2 class="release__title">TAKE ME A_PART, THE REMIXES</h2>
         <dl class="release__details">
           <div><dt>Label</dt><dd>Warp</dd></div>
@@ -343,6 +349,7 @@
     {%- comment -%} ============ TAKE ME APART ============ {%- endcomment -%}
     <article class="release" data-animate>
       <div class="release__meta">
+        {% render 'release-cover', image: section.settings.cover_take_me_apart, title: 'Take Me Apart' %}
         <h2 class="release__title">Take Me Apart</h2>
         <dl class="release__details">
           <div><dt>Label</dt><dd>Warp</dd></div>
@@ -405,6 +412,7 @@
     {%- comment -%} ============ HALLUCINOGEN ============ {%- endcomment -%}
     <article class="release" data-animate>
       <div class="release__meta">
+        {% render 'release-cover', image: section.settings.cover_hallucinogen, title: 'Hallucinogen' %}
         <h2 class="release__title">Hallucinogen</h2>
         <dl class="release__details">
           <div><dt>Label</dt><dd>Warp</dd></div>
@@ -443,6 +451,7 @@
     {%- comment -%} ============ HALLUCINOGEN REMIXES ============ {%- endcomment -%}
     <article class="release" data-animate>
       <div class="release__meta">
+        {% render 'release-cover', image: section.settings.cover_hallucinogen_remixes, title: 'Hallucinogen Remixes' %}
         <h2 class="release__title">Hallucinogen Remixes</h2>
         <dl class="release__details">
           <div><dt>Label</dt><dd>Warp</dd></div>
@@ -480,7 +489,53 @@
 {% schema %}
 {
   "name": "Releases",
-  "settings": []
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "cover_new_avatar",
+      "label": "Cover — new avatar"
+    },
+    {
+      "type": "image_picker",
+      "id": "cover_idea_1",
+      "label": "Cover — idea 1"
+    },
+    {
+      "type": "image_picker",
+      "id": "cover_in_the_blue_light",
+      "label": "Cover — In The Blue Light"
+    },
+    {
+      "type": "image_picker",
+      "id": "cover_raven_remixes",
+      "label": "Cover — RAVE:N, The Remixes"
+    },
+    {
+      "type": "image_picker",
+      "id": "cover_raven",
+      "label": "Cover — Raven"
+    },
+    {
+      "type": "image_picker",
+      "id": "cover_tma_remixes",
+      "label": "Cover — TAKE ME A_PART, THE REMIXES"
+    },
+    {
+      "type": "image_picker",
+      "id": "cover_take_me_apart",
+      "label": "Cover — Take Me Apart"
+    },
+    {
+      "type": "image_picker",
+      "id": "cover_hallucinogen",
+      "label": "Cover — Hallucinogen"
+    },
+    {
+      "type": "image_picker",
+      "id": "cover_hallucinogen_remixes",
+      "label": "Cover — Hallucinogen Remixes"
+    }
+  ]
 }
 {% endschema %}
 
@@ -501,6 +556,35 @@
     gap: 3rem;
     padding: 3rem 0;
     border-top: 1px solid rgba(255, 255, 255, 0.08);
+  }
+  .release__cover {
+    margin-bottom: 1.5rem;
+  }
+  .release__cover img {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+  .release__cover-placeholder {
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background:
+      radial-gradient(circle at 30% 30%, rgba(143, 191, 255, 0.12) 0%, transparent 60%),
+      radial-gradient(circle at 70% 70%, rgba(124, 232, 213, 0.12) 0%, transparent 60%),
+      var(--color-surface);
+    border: 1px solid rgba(124, 232, 213, 0.15);
+  }
+  .release__cover-placeholder span {
+    font-family: var(--font-heading);
+    font-style: italic;
+    font-size: 4rem;
+    background: var(--gradient-cosmic);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
   .release__title {
     font-size: clamp(1.75rem, 3.5vw, 2.5rem);
