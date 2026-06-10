@@ -1,0 +1,163 @@
+<footer class="site-footer section--dark">
+  <div class="glow-divider"></div>
+  <div class="container">
+    <div class="site-footer__grid">
+      <div class="site-footer__brand">
+        <a href="{{ routes.root_url }}" class="site-footer__logo">KELELA</a>
+        <p class="site-footer__tagline">{{ section.settings.tagline | default: 'New Avatar — Out July 10' }}</p>
+      </div>
+
+      <nav class="site-footer__nav" aria-label="Footer navigation">
+        <ul>
+          <li><a href="#pre-order">Pre-Order Album</a></li>
+          <li><a href="#stream">Stream Point Blank</a></li>
+          <li><a href="#tour">Tour Dates</a></li>
+          <li><a href="#merch">Merch</a></li>
+          <li><a href="#follow">Follow</a></li>
+        </ul>
+      </nav>
+
+      <div class="site-footer__social">
+        {%- if settings.social_instagram != blank -%}
+          <a href="{{ settings.social_instagram }}" target="_blank" rel="noopener" aria-label="Instagram">
+            {% render 'icon', icon: 'instagram' %}
+          </a>
+        {%- endif -%}
+        {%- if settings.social_spotify != blank -%}
+          <a href="{{ settings.social_spotify }}" target="_blank" rel="noopener" aria-label="Spotify">
+            {% render 'icon', icon: 'spotify' %}
+          </a>
+        {%- endif -%}
+        {%- if settings.social_tiktok != blank -%}
+          <a href="{{ settings.social_tiktok }}" target="_blank" rel="noopener" aria-label="TikTok">
+            {% render 'icon', icon: 'tiktok' %}
+          </a>
+        {%- endif -%}
+      </div>
+    </div>
+
+    <div class="site-footer__bottom">
+      <p class="site-footer__copyright">
+        &copy; {{ 'now' | date: '%Y' }} {{ shop.name }}. All rights reserved.
+      </p>
+      <div class="site-footer__legal">
+        {%- if shop.privacy_policy -%}
+          <a href="{{ shop.privacy_policy.url }}">Privacy</a>
+        {%- endif -%}
+        {%- if shop.refund_policy -%}
+          <a href="{{ shop.refund_policy.url }}">Refunds</a>
+        {%- endif -%}
+        {%- if shop.terms_of_service -%}
+          <a href="{{ shop.terms_of_service.url }}">Terms</a>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+</footer>
+
+{% schema %}
+{
+  "name": "Footer",
+  "settings": [
+    {
+      "type": "text",
+      "id": "tagline",
+      "label": "Tagline",
+      "default": "New Avatar — Out July 10"
+    }
+  ]
+}
+{% endschema %}
+
+<style>
+  .site-footer {
+    padding-block: 3rem 2rem;
+    position: relative;
+    z-index: 1;
+  }
+  .site-footer__grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 2rem;
+    padding-block: 3rem;
+  }
+  .site-footer__logo {
+    font-family: var(--font-heading);
+    font-size: 1.125rem;
+    font-weight: 700;
+    letter-spacing: 0.3em;
+    color: var(--color-primary);
+  }
+  .site-footer__tagline {
+    margin-top: 0.75rem;
+    font-size: 0.875rem;
+    color: var(--color-text-muted);
+  }
+  .site-footer__nav ul {
+    list-style: none;
+  }
+  .site-footer__nav li {
+    margin-bottom: 0.75rem;
+  }
+  .site-footer__nav a {
+    font-size: 0.8125rem;
+    color: var(--color-text-muted);
+    transition: color 0.2s;
+  }
+  .site-footer__nav a:hover {
+    color: var(--color-primary);
+  }
+  .site-footer__social {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+  }
+  .site-footer__social a {
+    color: var(--color-text-muted);
+    transition: color 0.2s;
+  }
+  .site-footer__social a:hover {
+    color: var(--color-primary);
+  }
+  .site-footer__social svg {
+    width: 20px;
+    height: 20px;
+  }
+  .site-footer__bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+  }
+  .site-footer__copyright {
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+  }
+  .site-footer__legal {
+    display: flex;
+    gap: 1.5rem;
+  }
+  .site-footer__legal a {
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+    transition: color 0.2s;
+  }
+  .site-footer__legal a:hover {
+    color: var(--color-text);
+  }
+  @media (max-width: 768px) {
+    .site-footer__grid {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+    .site-footer__social {
+      justify-content: center;
+    }
+    .site-footer__bottom {
+      flex-direction: column;
+      gap: 1rem;
+      text-align: center;
+    }
+  }
+</style>

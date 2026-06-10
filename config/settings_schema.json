@@ -1,0 +1,121 @@
+[
+  {
+    "name": "theme_info",
+    "theme_name": "New Avatar",
+    "theme_version": "1.0.0",
+    "theme_author": "Kelela Store",
+    "theme_documentation_url": "https://github.com",
+    "theme_support_url": "https://github.com"
+  },
+  {
+    "name": "Colors",
+    "settings": [
+      {
+        "type": "color",
+        "id": "color_primary",
+        "label": "Primary accent (teal)",
+        "default": "#00E5C0"
+      },
+      {
+        "type": "color",
+        "id": "color_secondary",
+        "label": "Secondary accent (neon blue)",
+        "default": "#00B4FF"
+      },
+      {
+        "type": "color",
+        "id": "color_gold",
+        "label": "Gold accent",
+        "default": "#D4AF37"
+      },
+      {
+        "type": "color",
+        "id": "color_background",
+        "label": "Background",
+        "default": "#0A0E14"
+      },
+      {
+        "type": "color",
+        "id": "color_surface",
+        "label": "Surface / cards",
+        "default": "#121820"
+      },
+      {
+        "type": "color",
+        "id": "color_text",
+        "label": "Text",
+        "default": "#F0F4F8"
+      }
+    ]
+  },
+  {
+    "name": "Typography",
+    "settings": [
+      {
+        "type": "font_picker",
+        "id": "font_heading",
+        "label": "Heading font",
+        "default": "syne_n7"
+      },
+      {
+        "type": "font_picker",
+        "id": "font_body",
+        "label": "Body font",
+        "default": "inter_n4"
+      }
+    ]
+  },
+  {
+    "name": "Social media",
+    "settings": [
+      {
+        "type": "text",
+        "id": "social_instagram",
+        "label": "Instagram URL"
+      },
+      {
+        "type": "text",
+        "id": "social_twitter",
+        "label": "Twitter / X URL"
+      },
+      {
+        "type": "text",
+        "id": "social_tiktok",
+        "label": "TikTok URL"
+      },
+      {
+        "type": "text",
+        "id": "social_youtube",
+        "label": "YouTube URL"
+      },
+      {
+        "type": "text",
+        "id": "social_spotify",
+        "label": "Spotify URL"
+      }
+    ]
+  },
+  {
+    "name": "Conversion",
+    "settings": [
+      {
+        "type": "text",
+        "id": "trust_badge",
+        "label": "Trust badge text",
+        "default": "Free shipping on U.S. orders over $75"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_announcement",
+        "label": "Show announcement bar",
+        "default": true
+      },
+      {
+        "type": "text",
+        "id": "announcement_text",
+        "label": "Announcement text",
+        "default": "NEW AVATAR — Pre-order now · Ships July 10"
+      }
+    ]
+  }
+]

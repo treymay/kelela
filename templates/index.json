@@ -1,0 +1,127 @@
+{
+  "sections": {
+    "hero": {
+      "type": "hero-preorder",
+      "settings": {
+        "eyebrow": "The new album",
+        "album_title": "NEW AVATAR",
+        "release_date": "Out July 10, 2026",
+        "description": "A new sonic dimension. Pre-order the album on vinyl, CD, and digital — exclusive colored vinyl variants available for a limited time.",
+        "cta_text": "Pre-Order Album",
+        "ships_text": "Ships July 10"
+      }
+    },
+    "stream": {
+      "type": "stream-point-blank",
+      "settings": {
+        "eyebrow": "Lead Single",
+        "title": "Point Blank",
+        "description": "The first glimpse into the New Avatar universe. Stream now on all platforms.",
+        "spotify_url": "https://open.spotify.com",
+        "spotify_cta": "Listen on Spotify",
+        "youtube_cta": "Watch Video"
+      }
+    },
+    "tour": {
+      "type": "tour-dates",
+      "blocks": {
+        "date-1": {
+          "type": "date",
+          "settings": {
+            "date": "2026-09-15",
+            "city": "Los Angeles",
+            "venue": "The Wiltern",
+            "region": "North America"
+          }
+        },
+        "date-2": {
+          "type": "date",
+          "settings": {
+            "date": "2026-09-18",
+            "city": "Brooklyn",
+            "venue": "Brooklyn Steel",
+            "region": "North America"
+          }
+        },
+        "date-3": {
+          "type": "date",
+          "settings": {
+            "date": "2026-10-05",
+            "city": "London",
+            "venue": "O2 Academy Brixton",
+            "region": "Europe"
+          }
+        },
+        "date-4": {
+          "type": "date",
+          "settings": {
+            "date": "2026-10-12",
+            "city": "Berlin",
+            "venue": "Huxley's Neue Welt",
+            "region": "Europe"
+          }
+        }
+      },
+      "block_order": ["date-1", "date-2", "date-3", "date-4"],
+      "settings": {
+        "eyebrow": "On Tour",
+        "title": "Tour Dates",
+        "description": "Catch Kelela live on the New Avatar world tour."
+      }
+    },
+    "merch": {
+      "type": "featured-merch",
+      "blocks": {
+        "product-1": {
+          "type": "product",
+          "settings": {
+            "title": "New Avatar — Standard Vinyl",
+            "price": "$32.00",
+            "badge": "Pre-Order"
+          }
+        },
+        "product-2": {
+          "type": "product",
+          "settings": {
+            "title": "New Avatar — Colored Vinyl",
+            "price": "$38.00",
+            "badge": "Limited"
+          }
+        },
+        "product-3": {
+          "type": "product",
+          "settings": {
+            "title": "Point Blank Tee",
+            "price": "$38.00"
+          }
+        },
+        "product-4": {
+          "type": "product",
+          "settings": {
+            "title": "New Avatar Hoodie",
+            "price": "$75.00"
+          }
+        }
+      },
+      "block_order": ["product-1", "product-2", "product-3", "product-4"],
+      "settings": {
+        "eyebrow": "Official Store",
+        "title": "Merch",
+        "description": "Exclusive New Avatar vinyl, apparel, and limited-edition drops.",
+        "trust_text": "Free shipping on U.S. orders over $75"
+      }
+    },
+    "follow": {
+      "type": "follow-kelela",
+      "settings": {
+        "eyebrow": "Stay Connected",
+        "title": "Follow Kelela",
+        "description": "Follow for behind-the-scenes content, new music, and tour updates.",
+        "show_newsletter": true,
+        "newsletter_title": "Join the list",
+        "newsletter_text": "Get early access to drops, tour announcements, and exclusive content."
+      }
+    }
+  },
+  "order": ["hero", "stream", "tour", "merch", "follow"]
+}

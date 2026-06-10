@@ -1,0 +1,230 @@
+<section id="merch" class="merch section section--dark section--cosmic">
+  <div class="cosmic-grid" aria-hidden="true"></div>
+
+  <div class="container">
+    <div class="merch__header" data-animate>
+      <p class="section-label">{{ section.settings.eyebrow | default: 'Official Store' }}</p>
+      <h2 class="section-title">{{ section.settings.title | default: 'Merch' }}</h2>
+      {%- if section.settings.description != blank -%}
+        <p class="section-subtitle">{{ section.settings.description }}</p>
+      {%- endif -%}
+    </div>
+
+    {%- assign collection = collections[section.settings.collection] -%}
+
+    {%- if collection != blank and collection.products.size > 0 -%}
+      <div class="merch__grid">
+        {%- for product in collection.products limit: section.settings.products_to_show -%}
+          <div data-animate style="transition-delay: {{ forloop.index0 | times: 100 }}ms">
+            {% render 'product-card', product: product %}
+          </div>
+        {%- endfor -%}
+      </div>
+    {%- elsif section.blocks.size > 0 -%}
+      <div class="merch__grid">
+        {%- for block in section.blocks -%}
+          <article class="product-card" data-animate {{ block.shopify_attributes }}>
+            <a href="{{ block.settings.link | default: '#' }}" class="product-card__link">
+              <div class="product-card__image">
+                {%- if block.settings.image != blank -%}
+                  {{ block.settings.image | image_url: width: 600 | image_tag: loading: 'lazy', alt: block.settings.title }}
+                {%- endif -%}
+              </div>
+              {%- if block.settings.badge != blank -%}
+                <span class="product-card__badge">{{ block.settings.badge }}</span>
+              {%- endif -%}
+              <div class="product-card__info">
+                <h3 class="product-card__title">{{ block.settings.title }}</h3>
+                <p class="product-card__price">{{ block.settings.price }}</p>
+              </div>
+            </a>
+          </article>
+        {%- endfor -%}
+      </div>
+    {%- else -%}
+      <div class="merch__placeholder" data-animate>
+        <p>Connect a collection or add product blocks in the theme editor.</p>
+      </div>
+    {%- endif -%}
+
+    <div class="merch__footer" data-animate>
+      {%- if section.settings.trust_text != blank -%}
+        <span class="trust-badge">
+          {% render 'icon', icon: 'check' %}
+          {{ section.settings.trust_text }}
+        </span>
+      {%- endif -%}
+
+      {%- if collection != blank -%}
+        <a href="{{ collection.url }}" class="btn btn--secondary">
+          {{ section.settings.view_all_text | default: 'View All Merch' }}
+        </a>
+      {%- elsif section.settings.view_all_url != blank -%}
+        <a href="{{ section.settings.view_all_url }}" class="btn btn--secondary">
+          {{ section.settings.view_all_text | default: 'View All Merch' }}
+        </a>
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Featured Merch",
+  "tag": "section",
+  "class": "section-merch",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "Official Store"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Merch"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "Exclusive New Avatar vinyl, apparel, and limited-edition drops."
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Collection"
+    },
+    {
+      "type": "range",
+      "id": "products_to_show",
+      "label": "Products to show",
+      "min": 2,
+      "max": 8,
+      "step": 1,
+      "default": 4
+    },
+    {
+      "type": "text",
+      "id": "trust_text",
+      "label": "Trust badge",
+      "default": "Free shipping on U.S. orders over $75"
+    },
+    {
+      "type": "url",
+      "id": "view_all_url",
+      "label": "View all link (if no collection)"
+    },
+    {
+      "type": "text",
+      "id": "view_all_text",
+      "label": "View all button text",
+      "default": "View All Merch"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "product",
+      "name": "Product",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "New Avatar Vinyl"
+        },
+        {
+          "type": "text",
+          "id": "price",
+          "label": "Price",
+          "default": "$32.00"
+        },
+        {
+          "type": "text",
+          "id": "badge",
+          "label": "Badge",
+          "default": "Limited"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Featured Merch",
+      "blocks": [
+        {
+          "type": "product",
+          "settings": {
+            "title": "New Avatar — Standard Vinyl",
+            "price": "$32.00",
+            "badge": "Pre-Order"
+          }
+        },
+        {
+          "type": "product",
+          "settings": {
+            "title": "New Avatar — Deluxe Edition",
+            "price": "$48.00",
+            "badge": "Limited"
+          }
+        },
+        {
+          "type": "product",
+          "settings": {
+            "title": "Point Blank Tee",
+            "price": "$38.00"
+          }
+        },
+        {
+          "type": "product",
+          "settings": {
+            "title": "New Avatar Hoodie",
+            "price": "$75.00"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+
+<style>
+  .merch__header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  .merch__header .section-subtitle {
+    margin-inline: auto;
+  }
+  .merch__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1.5rem;
+  }
+  .merch__placeholder {
+    text-align: center;
+    padding: 4rem 2rem;
+    color: var(--color-text-muted);
+    border: 1px dashed rgba(0, 229, 192, 0.3);
+    border-radius: var(--radius-md);
+  }
+  .merch__footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+</style>

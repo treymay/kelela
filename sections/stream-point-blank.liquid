@@ -1,0 +1,194 @@
+<section id="stream" class="stream section section--dark section--cosmic">
+  <div class="cosmic-grid" aria-hidden="true"></div>
+  <div class="geo-accent geo-accent--1" aria-hidden="true"></div>
+
+  <div class="container">
+    <div class="stream__grid" data-animate>
+      <div class="stream__info">
+        <p class="section-label">{{ section.settings.eyebrow | default: 'Lead Single' }}</p>
+        <h2 class="section-title">{{ section.settings.title | default: 'Point Blank' }}</h2>
+        <p class="section-subtitle">{{ section.settings.description }}</p>
+
+        <div class="stream__actions">
+          {%- if section.settings.spotify_url != blank -%}
+            <a href="{{ section.settings.spotify_url }}" class="btn btn--secondary btn--inline-mobile" target="_blank" rel="noopener">
+              {% render 'icon', icon: 'spotify' %}
+              {{ section.settings.spotify_cta | default: 'Listen on Spotify' }}
+            </a>
+          {%- endif -%}
+          {%- if section.settings.youtube_url != blank -%}
+            <a href="{{ section.settings.youtube_url }}" class="btn btn--ghost btn--inline-mobile" target="_blank" rel="noopener">
+              {% render 'icon', icon: 'play' %}
+              {{ section.settings.youtube_cta | default: 'Watch Video' }}
+            </a>
+          {%- endif -%}
+        </div>
+      </div>
+
+      <div class="stream__player">
+        {%- if section.settings.video_url != blank -%}
+          {%- assign video_id = section.settings.video_url | split: 'v=' | last | split: '&' | first -%}
+          {%- if section.settings.video_url contains 'youtu.be' -%}
+            {%- assign video_id = section.settings.video_url | split: 'youtu.be/' | last | split: '?' | first -%}
+          {%- endif -%}
+          <div class="stream__embed">
+            <iframe
+              src="https://www.youtube.com/embed/{{ video_id }}?rel=0&modestbranding=1&color=white"
+              title="{{ section.settings.title | default: 'Point Blank' }} — Official Video"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+              loading="lazy"
+            ></iframe>
+          </div>
+        {%- elsif section.settings.custom_embed != blank -%}
+          <div class="stream__embed stream__embed--custom">
+            {{ section.settings.custom_embed }}
+          </div>
+        {%- else -%}
+          <div class="stream__placeholder">
+            <div class="stream__placeholder-inner">
+              <span class="stream__placeholder-icon">{% render 'icon', icon: 'play' %}</span>
+              <p>Embed your Point Blank video or Spotify player in theme settings</p>
+            </div>
+          </div>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Stream — Point Blank",
+  "tag": "section",
+  "class": "section-stream",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "Lead Single"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Point Blank"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "The first glimpse into the New Avatar universe. Stream now on all platforms."
+    },
+    {
+      "type": "text",
+      "id": "video_url",
+      "label": "YouTube video URL",
+      "info": "Paste a full YouTube URL to embed the video player"
+    },
+    {
+      "type": "html",
+      "id": "custom_embed",
+      "label": "Custom embed code",
+      "info": "Alternative: paste Spotify or other embed HTML"
+    },
+    {
+      "type": "url",
+      "id": "spotify_url",
+      "label": "Spotify link"
+    },
+    {
+      "type": "text",
+      "id": "spotify_cta",
+      "label": "Spotify button text",
+      "default": "Listen on Spotify"
+    },
+    {
+      "type": "url",
+      "id": "youtube_url",
+      "label": "YouTube link (opens in new tab)"
+    },
+    {
+      "type": "text",
+      "id": "youtube_cta",
+      "label": "YouTube button text",
+      "default": "Watch Video"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Stream — Point Blank"
+    }
+  ]
+}
+{% endschema %}
+
+<style>
+  .stream__grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 4rem;
+    align-items: center;
+  }
+  .stream__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+  .stream__embed {
+    position: relative;
+    aspect-ratio: 16 / 9;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    border: 1px solid rgba(0, 229, 192, 0.2);
+    box-shadow: var(--shadow-glow-blue);
+  }
+  .stream__embed iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+  .stream__placeholder {
+    aspect-ratio: 16 / 9;
+    background: linear-gradient(135deg, rgba(0, 180, 255, 0.1), rgba(0, 229, 192, 0.05));
+    border: 1px dashed rgba(0, 229, 192, 0.3);
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .stream__placeholder-inner {
+    text-align: center;
+    padding: 2rem;
+    color: var(--color-text-muted);
+  }
+  .stream__placeholder-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: rgba(0, 229, 192, 0.15);
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+  }
+  .stream__placeholder-icon svg {
+    width: 24px;
+    height: 24px;
+    margin-left: 4px;
+  }
+  @media (max-width: 900px) {
+    .stream__grid {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+    .stream__actions {
+      flex-direction: column;
+    }
+  }
+</style>

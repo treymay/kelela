@@ -1,0 +1,186 @@
+<header class="site-header" data-header>
+  <div class="site-header__inner container">
+    <a href="{{ routes.root_url }}" class="site-header__logo" aria-label="{{ shop.name }} — Home">
+      {%- if section.settings.logo != blank -%}
+        {{ section.settings.logo | image_url: width: 200 | image_tag: loading: 'eager', alt: shop.name }}
+      {%- else -%}
+        <span class="site-header__logo-text">KELELA</span>
+      {%- endif -%}
+    </a>
+
+    <nav class="site-header__nav" data-nav aria-label="Main navigation">
+      <ul class="site-header__links">
+        <li><a href="#pre-order">Pre-Order</a></li>
+        <li><a href="#stream">Stream</a></li>
+        <li><a href="#tour">Tour</a></li>
+        <li><a href="#merch">Merch</a></li>
+        <li><a href="#follow">Follow</a></li>
+      </ul>
+    </nav>
+
+    <div class="site-header__actions">
+      <a href="{{ routes.cart_url }}" class="site-header__cart" aria-label="Cart ({{ cart.item_count }} items)">
+        {% render 'icon', icon: 'cart' %}
+        {%- if cart.item_count > 0 -%}
+          <span class="site-header__cart-count">{{ cart.item_count }}</span>
+        {%- endif -%}
+      </a>
+
+      <button class="site-header__menu-toggle" data-menu-toggle aria-label="Toggle menu" aria-expanded="false">
+        <span class="site-header__menu-icon">{% render 'icon', icon: 'menu' %}</span>
+        <span class="site-header__close-icon">{% render 'icon', icon: 'close' %}</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+{% schema %}
+{
+  "name": "Header",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logo image"
+    }
+  ]
+}
+{% endschema %}
+
+<style>
+  .site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    height: var(--header-height);
+    transition: transform 0.3s ease, background 0.3s ease, backdrop-filter 0.3s ease;
+  }
+  .site-header.is-scrolled {
+    background: rgba(10, 14, 20, 0.85);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(0, 229, 192, 0.1);
+  }
+  .site-header.is-hidden {
+    transform: translateY(-100%);
+  }
+  .site-header__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+  }
+  .site-header__logo-text {
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: 0.3em;
+    background: var(--gradient-cosmic);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .site-header__logo img {
+    height: 32px;
+    width: auto;
+  }
+  .site-header__links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+  .site-header__links a {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+    transition: color 0.2s;
+    position: relative;
+  }
+  .site-header__links a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--color-primary);
+    transition: width 0.3s ease;
+  }
+  .site-header__links a:hover {
+    color: var(--color-primary);
+  }
+  .site-header__links a:hover::after {
+    width: 100%;
+  }
+  .site-header__actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .site-header__cart {
+    position: relative;
+    padding: 0.5rem;
+    color: var(--color-text);
+    transition: color 0.2s;
+  }
+  .site-header__cart:hover {
+    color: var(--color-primary);
+  }
+  .site-header__cart-count {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 18px;
+    height: 18px;
+    padding: 0 4px;
+    font-size: 0.6875rem;
+    font-weight: 700;
+    line-height: 18px;
+    text-align: center;
+    background: var(--color-primary);
+    color: var(--color-bg);
+    border-radius: 50%;
+  }
+  .site-header__menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--color-text);
+    cursor: pointer;
+    padding: 0.5rem;
+  }
+  .site-header__close-icon { display: none; }
+  .site-header__nav.is-open + .site-header__actions .site-header__menu-icon,
+  .site-header__menu-toggle[aria-expanded="true"] .site-header__menu-icon { display: none; }
+  .site-header__menu-toggle[aria-expanded="true"] .site-header__close-icon { display: block; }
+
+  @media (max-width: 768px) {
+    .site-header__menu-toggle { display: block; }
+    .site-header__nav {
+      position: fixed;
+      inset: var(--header-height) 0 0 0;
+      background: rgba(10, 14, 20, 0.97);
+      backdrop-filter: blur(20px);
+      transform: translateX(100%);
+      transition: transform 0.3s ease;
+      padding: 2rem;
+    }
+    .site-header__nav.is-open {
+      transform: translateX(0);
+    }
+    .site-header__links {
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    .site-header__links a {
+      font-size: 1.25rem;
+    }
+    body.menu-open { overflow: hidden; }
+  }
+  @media (min-width: 769px) {
+    .site-header__nav { display: block !important; }
+  }
+</style>

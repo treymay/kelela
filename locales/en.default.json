@@ -1,0 +1,44 @@
+{
+  "general": {
+    "accessibility": {
+      "skip_to_content": "Skip to content"
+    },
+    "cart": {
+      "title": "Cart",
+      "empty": "Your cart is empty",
+      "checkout": "Checkout"
+    },
+    "search": {
+      "placeholder": "Search"
+    }
+  },
+  "products": {
+    "product": {
+      "add_to_cart": "Add to Cart",
+      "sold_out": "Sold Out",
+      "pre_order": "Pre-Order Now"
+    }
+  },
+  "sections": {
+    "hero_preorder": {
+      "pre_order": "Pre-Order Album",
+      "ships": "Ships July 10"
+    },
+    "stream": {
+      "listen_spotify": "Listen on Spotify",
+      "watch_video": "Watch Video"
+    },
+    "tour": {
+      "tickets": "Tickets",
+      "no_shows": "No upcoming shows"
+    },
+    "merch": {
+      "view_store": "View All Merch"
+    },
+    "follow": {
+      "heading": "Follow Kelela",
+      "newsletter_placeholder": "Your email",
+      "newsletter_submit": "Subscribe"
+    }
+  }
+}

@@ -1,0 +1,231 @@
+<section id="follow" class="follow section section--cosmic">
+  <div class="cosmic-grid" aria-hidden="true"></div>
+
+  <div class="container">
+    <div class="follow__inner" data-animate>
+      <div class="follow__content">
+        <p class="section-label">{{ section.settings.eyebrow | default: 'Stay Connected' }}</p>
+        <h2 class="section-title">{{ section.settings.title | default: 'Follow Kelela' }}</h2>
+        {%- if section.settings.description != blank -%}
+          <p class="section-subtitle">{{ section.settings.description }}</p>
+        {%- endif -%}
+
+        <div class="follow__social">
+          {%- if settings.social_instagram != blank -%}
+            <a href="{{ settings.social_instagram }}" class="follow__social-link" target="_blank" rel="noopener" aria-label="Instagram">
+              {% render 'icon', icon: 'instagram' %}
+            </a>
+          {%- endif -%}
+          {%- if settings.social_twitter != blank -%}
+            <a href="{{ settings.social_twitter }}" class="follow__social-link" target="_blank" rel="noopener" aria-label="Twitter">
+              {% render 'icon', icon: 'twitter' %}
+            </a>
+          {%- endif -%}
+          {%- if settings.social_tiktok != blank -%}
+            <a href="{{ settings.social_tiktok }}" class="follow__social-link" target="_blank" rel="noopener" aria-label="TikTok">
+              {% render 'icon', icon: 'tiktok' %}
+            </a>
+          {%- endif -%}
+          {%- if settings.social_youtube != blank -%}
+            <a href="{{ settings.social_youtube }}" class="follow__social-link" target="_blank" rel="noopener" aria-label="YouTube">
+              {% render 'icon', icon: 'youtube' %}
+            </a>
+          {%- endif -%}
+          {%- if settings.social_spotify != blank -%}
+            <a href="{{ settings.social_spotify }}" class="follow__social-link" target="_blank" rel="noopener" aria-label="Spotify">
+              {% render 'icon', icon: 'spotify' %}
+            </a>
+          {%- endif -%}
+        </div>
+      </div>
+
+      {%- if section.settings.show_newsletter -%}
+        <div class="follow__newsletter">
+          <h3 class="follow__newsletter-title">{{ section.settings.newsletter_title | default: 'Join the list' }}</h3>
+          <p class="follow__newsletter-text">{{ section.settings.newsletter_text | default: 'Get early access to drops, tour announcements, and exclusive content.' }}</p>
+          {% form 'customer', class: 'follow__form', data-newsletter-form: true %}
+            <input type="hidden" name="contact[tags]" value="newsletter">
+            <div class="follow__form-row">
+              <input
+                type="email"
+                name="contact[email]"
+                class="input-field"
+                placeholder="{{ section.settings.newsletter_placeholder | default: 'Your email' }}"
+                required
+                autocomplete="email"
+                aria-label="Email address"
+              >
+              <button type="submit" class="btn btn--primary" data-default-text="{{ section.settings.newsletter_button | default: 'Subscribe' }}">
+                {{ section.settings.newsletter_button | default: 'Subscribe' }}
+              </button>
+            </div>
+            {%- if form.posted_successfully? -%}
+              <p class="follow__success">You're on the list. Welcome to the New Avatar era.</p>
+            {%- endif -%}
+          {% endform %}
+        </div>
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Follow Kelela",
+  "tag": "section",
+  "class": "section-follow",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "Stay Connected"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Follow Kelela"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "Follow for behind-the-scenes content, new music, and tour updates."
+    },
+    {
+      "type": "checkbox",
+      "id": "show_newsletter",
+      "label": "Show newsletter signup",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "newsletter_title",
+      "label": "Newsletter title",
+      "default": "Join the list"
+    },
+    {
+      "type": "text",
+      "id": "newsletter_text",
+      "label": "Newsletter description",
+      "default": "Get early access to drops, tour announcements, and exclusive content."
+    },
+    {
+      "type": "text",
+      "id": "newsletter_placeholder",
+      "label": "Email placeholder",
+      "default": "Your email"
+    },
+    {
+      "type": "text",
+      "id": "newsletter_button",
+      "label": "Subscribe button text",
+      "default": "Subscribe"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Follow Kelela"
+    }
+  ]
+}
+{% endschema %}
+
+<style>
+  .follow__inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    padding: 3rem;
+    background: var(--color-surface);
+    border: 1px solid rgba(0, 229, 192, 0.15);
+    border-radius: var(--radius-lg);
+    position: relative;
+    overflow: hidden;
+  }
+  .follow__inner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    background: radial-gradient(ellipse at 100% 50%, rgba(0, 180, 255, 0.1) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .follow__social {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+  .follow__social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 50%;
+    color: var(--color-text);
+    transition: all 0.3s ease;
+  }
+  .follow__social-link:hover {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+    box-shadow: var(--shadow-glow);
+    transform: translateY(-2px);
+  }
+  .follow__social-link svg {
+    width: 22px;
+    height: 22px;
+  }
+  .follow__newsletter {
+    position: relative;
+    z-index: 1;
+  }
+  .follow__newsletter-title {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+  .follow__newsletter-text {
+    color: var(--color-text-muted);
+    margin-bottom: 1.5rem;
+    font-size: 0.9375rem;
+  }
+  .follow__form-row {
+    display: flex;
+    gap: 0.75rem;
+  }
+  .follow__form-row .input-field {
+    flex: 1;
+  }
+  .follow__form-row .btn {
+    flex-shrink: 0;
+  }
+  .follow__success {
+    margin-top: 1rem;
+    color: var(--color-primary);
+    font-size: 0.875rem;
+    font-weight: 600;
+  }
+  @media (max-width: 768px) {
+    .follow__inner {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+      padding: 2rem;
+    }
+    .follow__form-row {
+      flex-direction: column;
+    }
+    .follow__social {
+      justify-content: center;
+    }
+    .follow__content {
+      text-align: center;
+    }
+  }
+</style>

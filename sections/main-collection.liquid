@@ -1,0 +1,76 @@
+<section class="collection-page section">
+  <div class="container">
+    <header class="collection-page__header" data-animate>
+      <p class="section-label">Official Store</p>
+      <h1 class="section-title">{{ collection.title }}</h1>
+      {%- if collection.description != blank -%}
+        <p class="section-subtitle">{{ collection.description }}</p>
+      {%- endif -%}
+    </header>
+
+    {%- if collection.products.size > 0 -%}
+      <div class="collection-page__grid">
+        {%- for product in collection.products -%}
+          <div data-animate style="transition-delay: {{ forloop.index0 | times: 80 }}ms">
+            {% render 'product-card', product: product %}
+          </div>
+        {%- endfor -%}
+      </div>
+    {%- else -%}
+      <p class="collection-page__empty">No products in this collection yet.</p>
+    {%- endif -%}
+
+    {%- if paginate.pages > 1 -%}
+      <nav class="collection-page__pagination" aria-label="Pagination">
+        {%- if paginate.previous -%}
+          <a href="{{ paginate.previous.url }}" class="btn btn--ghost">&larr; Previous</a>
+        {%- endif -%}
+        <span class="collection-page__page-info">Page {{ paginate.current_page }} of {{ paginate.pages }}</span>
+        {%- if paginate.next -%}
+          <a href="{{ paginate.next.url }}" class="btn btn--ghost">Next &rarr;</a>
+        {%- endif -%}
+      </nav>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Collection",
+  "settings": []
+}
+{% endschema %}
+
+<style>
+  .collection-page {
+    padding-top: calc(var(--header-height) + 2rem);
+  }
+  .collection-page__header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  .collection-page__header .section-subtitle {
+    margin-inline: auto;
+  }
+  .collection-page__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1.5rem;
+  }
+  .collection-page__empty {
+    text-align: center;
+    padding: 4rem;
+    color: var(--color-text-muted);
+  }
+  .collection-page__pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+  .collection-page__page-info {
+    font-size: 0.875rem;
+    color: var(--color-text-muted);
+  }
+</style>

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400" fill="none">
+  <defs>
+    <linearGradient id="cosmic-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00B4FF" stop-opacity="0.3"/>
+      <stop offset="50%" stop-color="#00E5C0" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#006B5A" stop-opacity="0.1"/>
+    </linearGradient>
+  </defs>
+  <circle cx="200" cy="200" r="180" stroke="url(#cosmic-grad)" stroke-width="1" fill="none"/>
+  <circle cx="200" cy="200" r="140" stroke="url(#cosmic-grad)" stroke-width="0.5" fill="none"/>
+  <circle cx="200" cy="200" r="100" stroke="url(#cosmic-grad)" stroke-width="0.5" fill="none"/>
+  <line x1="200" y1="20" x2="200" y2="380" stroke="url(#cosmic-grad)" stroke-width="0.5"/>
+  <line x1="20" y1="200" x2="380" y2="200" stroke="url(#cosmic-grad)" stroke-width="0.5"/>
+  <line x1="73" y1="73" x2="327" y2="327" stroke="url(#cosmic-grad)" stroke-width="0.5"/>
+  <line x1="327" y1="73" x2="73" y2="327" stroke="url(#cosmic-grad)" stroke-width="0.5"/>
+</svg>
